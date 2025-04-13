@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 font-sans;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:scale-[1.02];
+  }
+  
+  .btn {
+    @apply px-6 py-2 rounded-md transition-all duration-300 font-medium focus:outline-none;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-2 focus:ring-primary-300;
+  }
+
+  /* Custom Slick Slider Styles */
+  .slick-slide {
+    @apply px-1 md:px-2; /* Add spacing between slides */
+  }
+
+  .slick-prev,
+  .slick-next {
+    @apply w-8 h-8 z-10;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    @apply text-2xl text-primary-500 opacity-75 hover:opacity-100;
+  }
+  .slick-prev {
+    @apply -left-2 md:-left-4;
+  }
+  .slick-next {
+    @apply -right-2 md:-right-4;
+  }
+
+  .slick-dots li button:before {
+    @apply text-primary-300 text-xs;
+  }
+  .slick-dots li.slick-active button:before {
+    @apply text-primary-500;
+  }
+
+  /* Text Shadow Utilities */
+  .text-shadow-lg {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  }
+  .text-shadow {
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-300 rounded-full hover:bg-primary-400;
+}
