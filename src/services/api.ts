@@ -1,7 +1,7 @@
 import { MoviesResponse, GenresResponse, LanguagesResponse } from '../types';
 
 // Using API key from environment variables
-const API_KEY = process.env.REACT_APP_TMDB_API_KEY || 'YOUR_FALLBACK_API_KEY_HERE'; 
+const API_KEY = 'c16488af7ab2efaf5b5ce51f6ff22ee1'; 
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 async function tmdbFetch<T>(endpoint: string, params?: Record<string, string>): Promise<T> {
