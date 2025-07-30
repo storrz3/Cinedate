@@ -5,14 +5,20 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+body {
+    /* Default light mode styles */
     @apply bg-white text-gray-900 font-sans;
+  }
+  /* Dark mode base styles */
+  .dark body {
+    @apply bg-gray-900 text-gray-200;
   }
 }
 
 @layer components {
   .card {
-    @apply bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-lg hover:scale-[1.02];
+    /* Adjust card for dark mode */
+    @apply bg-white dark:bg-gray-800 rounded-lg shadow-md dark:shadow-lg dark:shadow-black/20 overflow-hidden transition-all duration-300 hover:shadow-lg dark:hover:shadow-xl dark:hover:shadow-black/30 hover:scale-[1.02];
   }
   
   .btn {
@@ -20,6 +26,7 @@
   }
   
   .btn-primary {
+    /* No specific dark mode needed if using purple */
     @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-2 focus:ring-primary-300;
   }
 
@@ -34,20 +41,23 @@
   }
   .slick-prev:before,
   .slick-next:before {
-    @apply text-2xl text-primary-500 opacity-75 hover:opacity-100;
+    /* Adjust arrows for dark mode */
+    @apply text-2xl text-primary-500 dark:text-primary-400 opacity-75 hover:opacity-100;
   }
   .slick-prev {
     @apply -left-2 md:-left-4;
-  }
+}
   .slick-next {
     @apply -right-2 md:-right-4;
   }
 
   .slick-dots li button:before {
-    @apply text-primary-300 text-xs;
+    /* Adjust dots for dark mode */
+    @apply text-primary-300 dark:text-gray-600 text-xs;
   }
   .slick-dots li.slick-active button:before {
-    @apply text-primary-500;
+    /* Adjust active dots for dark mode */
+    @apply text-primary-500 dark:text-primary-400;
   }
 
   /* Text Shadow Utilities */
@@ -64,9 +74,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100;
+  /* Adjust track for dark mode */
+  @apply bg-gray-100 dark:bg-gray-700;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-300 rounded-full hover:bg-primary-400;
+  /* Adjust thumb for dark mode */
+  @apply bg-primary-300 dark:bg-primary-500 rounded-full hover:bg-primary-400 dark:hover:bg-primary-600;
 }

@@ -6,6 +6,7 @@ export interface Movie {
   backdrop_path: string | null;
   overview: string;
   vote_average: number;
+  popularity: number; // Add this field
   genre_ids: number[];
   original_language: string;
 }
@@ -53,6 +54,7 @@ export interface FilterProps {
   setSelectedLanguage: (languageCode: string | null) => void;
   sortBy: string;
   setSortBy: (sortBy: string) => void;
-  useExactYear: boolean;
-  setUseExactYear: (useExactYear: boolean) => void;
-} 
+  // These properties are kept for compatibility but the UI toggle has been removed
+  useExactYear?: boolean;
+  setUseExactYear?: (useExactYear: boolean) => void;
+}
